@@ -1,6 +1,11 @@
-exports.handler = async function(event, context) {
-    return {
-        statusCode: 200,
-        body: JSON.stringify({message: "Hello World"})
-    };
-}
+const exampleFunction = async (event, context) => {
+  return {
+    statusCode: 200,
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({ message: `Hello world` }),
+  };
+};
+
+exports.handler = exampleFunction;
